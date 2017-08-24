@@ -21,7 +21,7 @@
       }, 5000, function() {
         $(myElement).removeClass('currently-animated').addClass('finished-animating');
       });
-      $('#element:animated').removeClass('not-animated').addClass('currently-animated'); // selects elements that are currently animating
+      myElement.filter(':animated').removeClass('not-animated').addClass('currently-animated'); // selects elements that are currently animating
       // you can use the is() method to perform an action if the selection is animated
       if(myElement.is(':animated')) {
         myElement.addClass('selected');
