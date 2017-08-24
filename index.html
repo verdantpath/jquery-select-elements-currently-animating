@@ -11,14 +11,23 @@
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/Javascript">
 
+  var myElement = $('#element');
+
   $('div').on('click', function() {
     $('#element')
       .attr('style', 'position: relative')
       .animate({
         top: "+=400"
-      }, 50000);
-      $('#element:animated').addClass('currently-animated'); // selects elements that are currently animating
+      }, 5000, function() {
+        $('#element').removeClass('currently-animated').addClass('finished-animating');
+      });
+      $('#element:animated').removeClass('not-animated').addClass('currently-animated'); // selects elements that are currently animating
+      // you can use the is() method to perform an action if the selection is animated 
+      if(myElement.is(':animated')) {
+        myElement.addClass('selected');
+      }
   });
+$('#element:not(#element:animated)').addClass('not-animated');
 
 </script>
 </body>
