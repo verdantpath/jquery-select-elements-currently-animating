@@ -14,15 +14,15 @@
   var myElement = $('#element');
 
   $('div').on('click', function() {
-    $('#element')
+    $(myElement)
       .attr('style', 'position: relative')
       .animate({
         top: "+=400"
       }, 5000, function() {
-        $('#element').removeClass('currently-animated').addClass('finished-animating');
+        $(myElement).removeClass('currently-animated').addClass('finished-animating');
       });
       $('#element:animated').removeClass('not-animated').addClass('currently-animated'); // selects elements that are currently animating
-      // you can use the is() method to perform an action if the selection is animated 
+      // you can use the is() method to perform an action if the selection is animated
       if(myElement.is(':animated')) {
         myElement.addClass('selected');
       }
