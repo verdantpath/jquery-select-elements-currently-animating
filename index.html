@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JQuery Select Elements Currently Animating</title>
+<style>
+  tr.odd {
+    background-color: #ddd;
+  }
+</style>
+</head>
+<body>
+<div id="content">
+  <h1>Main title</h1>
+  <h2>Section title</h2>
+  <p>Some content</p>
+  <h2>Section title</h2>
+  <p>More content</p>
+</div>
+<ul>
+  <li>first item</li>
+  <li>Second item</li>
+  <li>third item</li>
+  <li>fourth item</li>
+  <li>fifth item</li>
+</ul>
+<table>
+  <tr><td>0</td><td>even</td></tr>
+  <tr><td>1</td><td>odd</td></tr>
+  <tr><td>2</td><td>even</td></tr>
+  <tr><td>3</td><td>odd</td></tr>
+  <tr><td>4</td><td>even</td></tr>
+  <tr><td>5</td><td>odd</td></tr>
+</table>
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/Javascript">
+  // $('#content p:first').addClass('selected'); // matches the first p element
+  // $('#content p:last').addClass('selected'); // mateches the last p element
+  // $('ul li:even').addClass('selected'); // matches the even-numbered li's (zero indexed)
+  // $('ul li:odd').addClass('js-selected'); // matches the odd-numbered li's (zero indexed)
+  // $('ul li:eq(2)').addClass('selected'); // matches a single item by its index (n), the third in this example (zero indexed)
+  // $('ul li:lt(3)').addClass('selected'); // matches all elements with an index below (n), zero indexed
+  // $('ul li:gt(2)').addClass('selected'); // matches all elements with an index above (n), zero indexed
+  // $('tr:odd').addClass('odd'); // matches the odd table rows
+  $('tr').filter(':odd').addClass('odd'); // this works too
+</script>
+</body>
+</html>
